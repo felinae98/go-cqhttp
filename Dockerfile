@@ -16,6 +16,7 @@ FROM alpine:latest
 
 COPY --from=builder /build/cqhttp /usr/bin/cqhttp
 RUN chmod +x /usr/bin/cqhttp
+RUN apk update && apk add ffmpeg
 
 WORKDIR /data
 
